@@ -2,7 +2,7 @@
 .sidebar {
     width: 260px;
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(to bottom, #9395D3 0%, #A2A3BB 100%);
+    background-color: #ddaee6;
     opacity: 0.8;
     
   }

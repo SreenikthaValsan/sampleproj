@@ -33,11 +33,12 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+    
   }
   
 
   .stat-card {
-    background: radial-gradient(circle, #9395D3, transparent), linear-gradient(135deg, #A2A3BB,transparent);
+    background-color: #ddaee6;
 
   backdrop-filter: blur(50px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -81,7 +82,7 @@
   }
   
   .stat-change.positive {
-    color: #39ff5e;
+    color: #066017;
   }
   
   .stat-change.negative {
@@ -93,9 +94,7 @@
     grid-column: span 2;
     padding: 1rem;
     background-color:rgba(0, 0, 0, 0.6);
-    border-image: linear-gradient(to right, #9395D3 0%, #A2A3BB 100%) 1;
-    border-width: 2px;
-    border-style: solid;
+    border: 2px solid #ddaee6;
     backdrop-filter: blur(50px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 0.5rem;
@@ -151,9 +150,7 @@
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
-    border-image: linear-gradient(to right, #9395D3 0%, #A2A3BB 100%) 1;
-    border-width: 2px;
-    border-style: solid;
+    border: 2px solid #ddaee6;
   }
   
   .follow-up-header {

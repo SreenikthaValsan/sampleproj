@@ -1,6 +1,6 @@
 // Dashboard.js
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, defs, linearGradient, stop } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 import { Home, ChevronDown } from 'lucide-react';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import './Dashboard.css';
@@ -122,16 +122,9 @@ const Dashboard = () => {
             <div className="chart-container">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={salesData} barSize={30}>
-                  <defs>
-                  <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="50%" stopColor="#9395D3" />
-                    <stop offset="100%" stopColor="#A2A3BB" />
-                   
-                </linearGradient>
-                  </defs>
                   <XAxis dataKey="month" axisLine={false} tickLine={false} />
                   <YAxis axisLine={false} tickLine={false} />
-                  <Bar dataKey="value" fill="url(#barGradient)" />
+                  <Bar dataKey="value" fill="#ddaee6" />
                 </BarChart>
               </ResponsiveContainer>
             </div>
