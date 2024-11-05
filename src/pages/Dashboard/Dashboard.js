@@ -123,16 +123,15 @@ const Dashboard = () => {
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={salesData} barSize={30}>
                   <defs>
-                    <linearGradient id="conicGradient" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#ff7e5f" />
-                      <stop offset="33%" stopColor="#feb47b" />
-                      <stop offset="66%" stopColor="#6a82fb" />
-                      <stop offset="100%" stopColor="#fc5c7d" />
-                    </linearGradient>
+                  <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="50%" stopColor="#9395D3" />
+                    <stop offset="100%" stopColor="#A2A3BB" />
+                   
+                </linearGradient>
                   </defs>
                   <XAxis dataKey="month" axisLine={false} tickLine={false} />
                   <YAxis axisLine={false} tickLine={false} />
-                  <Bar dataKey="value" fill="url(#conicGradient)" />
+                  <Bar dataKey="value" fill="url(#barGradient)" />
                 </BarChart>
               </ResponsiveContainer>
             </div>

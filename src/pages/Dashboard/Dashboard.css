@@ -37,7 +37,7 @@
   
 
   .stat-card {
-    background: radial-gradient(circle, #5E503F, transparent), linear-gradient(135deg, #c6ac8f,transparent);
+    background: radial-gradient(circle, #9395D3, transparent), linear-gradient(135deg, #A2A3BB,transparent);
 
   backdrop-filter: blur(50px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -81,7 +81,7 @@
   }
   
   .stat-change.positive {
-    color: #10e19f;
+    color: #39ff5e;
   }
   
   .stat-change.negative {
@@ -93,7 +93,7 @@
     grid-column: span 2;
     padding: 1rem;
     background-color:rgba(0, 0, 0, 0.6);
-    border-image: linear-gradient(to right, #5E503F 0%, #c6ac8f 100%) 1;
+    border-image: linear-gradient(to right, #9395D3 0%, #A2A3BB 100%) 1;
     border-width: 2px;
     border-style: solid;
     backdrop-filter: blur(50px);
@@ -151,7 +151,7 @@
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
-    border-image: linear-gradient(to right, #5E503F 0%, #c6ac8f 100%) 1;
+    border-image: linear-gradient(to right, #9395D3 0%, #A2A3BB 100%) 1;
     border-width: 2px;
     border-style: solid;
   }
@@ -187,7 +187,7 @@
   
   .follow-up-details p {
     font-size: 0.875rem;
-    color: #4b5563;
+    color: #a8a9ac;
   }
   
   .status-badge {
@@ -224,11 +224,11 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
     font-size: 0.875rem;
-    color: #4b5563;
+    color: #a8a9ac;
   }
   
   .date-label {
-    color: #6b7280;
+    color: #a8a9ac;
   }
 
   .conic-gradient {
