@@ -18,7 +18,7 @@
   .header-title {
     font-size: 1.5rem;
     font-weight: 600;
-    color:#f3f4f6;
+    color: #EAE0D5;
   }
   
   .dashboard-grid {
@@ -37,7 +37,7 @@
   
 
   .stat-card {
-    background: radial-gradient(circle, #01033b, transparent), linear-gradient(135deg, #7b1e02, #feb47b);
+    background: radial-gradient(circle, #5E503F, transparent), linear-gradient(135deg, #c6ac8f,transparent);
 
   backdrop-filter: blur(50px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -92,13 +92,13 @@
   .chart-card {
     grid-column: span 2;
     padding: 1rem;
-    border-radius: 0.5rem;
-    background: radial-gradient(circle, #01033b, transparent), linear-gradient(135deg, #7b1e02, #feb47b);
-
+    background-color:rgba(0, 0, 0, 0.6);
+    border-image: linear-gradient(to right, #5E503F 0%, #c6ac8f 100%) 1;
+    border-width: 2px;
+    border-style: solid;
     backdrop-filter: blur(50px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      padding: 1rem;
-      border-radius: 0.5rem;
+    border-radius: 0.5rem;
   }
   
   .chart-header {
@@ -151,6 +151,9 @@
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
+    border-image: linear-gradient(to right, #5E503F 0%, #c6ac8f 100%) 1;
+    border-width: 2px;
+    border-style: solid;
   }
   
   .follow-up-header {
