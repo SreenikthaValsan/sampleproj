@@ -11,7 +11,8 @@ const Calendar = () => {
       'July', 'August', 'September', 'October', 'November', 'December'
     ];
   
-    const API_BASE_URL = 'http://127.0.0.1:5050/getCalendarData';
+    // const API_BASE_URL = 'http://127.0.0.1:5050/getCalendarData';
+    const API_BASE_URL = 'https://sampleproj-rho.vercel.app/getCalendarData';
 
     useEffect(() => {
       const fetchCalendarData = async () => {

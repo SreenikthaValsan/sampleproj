@@ -23,8 +23,11 @@ const Leads = () => {
     unitNo: ''
   });
 
-  const API_BASE_URL = 'http://127.0.0.1:5050/getLeads';
-  const COUNTS_URL = 'http://127.0.0.1:5050/getCounts';
+  // const API_BASE_URL = 'http://127.0.0.1:5050/getLeads';
+  // const COUNTS_URL = 'http://127.0.0.1:5050/getCounts';
+
+  const API_BASE_URL = 'https://sampleproj-rho.vercel.app/getLeads';
+  const COUNTS_URL = 'https://sampleproj-rho.vercel.app/getCounts';
 
   // Function to get the count key for a tab
   const getCountKey = (tabName) => {
