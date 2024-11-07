@@ -1,0 +1,143 @@
+.calendar {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 ;
+}
+  
+  .header {
+    padding: 20px;
+  }
+  
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #f5ecec;
+    margin: 0;
+  }
+  
+ 
+  
+  .view-options {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .view-option {
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+  }
+  
+  .month-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    
+  }
+  
+  .nav-button {
+    width: 20px;
+    height: 20px;
+    color: #666;
+    cursor: pointer;
+  }
+  
+  .month-title {
+    font-size: 16px;
+    color: #f5ecec;
+  }
+  
+  .calendar-grid {
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .week-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  
+  .week-day {
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  
+  .day-cell {
+    aspect-ratio: 1;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 8px;
+    
+  }
+  
+  .day-cell:nth-child(7n) {
+    border-right: 1px solid #e0e0e0;
+  }
+  
+  .day-number {
+    font-size: 14px;
+    color: #333;
+    display: block;
+    margin-bottom: 4px;
+  }
+  
+  .events {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .event {
+    background-color: #e8f5e9;
+    color: #1a7431;
+    padding: 4px 6px;
+    border-radius: 2px;
+    font-size: 12px;
+  }
+  
+  /* Grid lines */
+  .days-grid {
+    border-left: 1px solid #e0e0e0;
+  }
+  
+  /* Empty cells */
+  .day-cell:empty {
+    background-color: #f9f9f9;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .header {
+      padding: 16px;
+    }
+    
+    .view-options {
+      gap: 16px;
+    }
+    
+    .day-cell {
+      padding: 4px;
+    }
+    
+    .event {
+      font-size: 10px;
+      padding: 2px 4px;
+    }
+  }

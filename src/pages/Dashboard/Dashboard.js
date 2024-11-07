@@ -1,8 +1,7 @@
-// Dashboard.js
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 import { Home, ChevronDown } from 'lucide-react';
-import Sidebar from '../../components/Sidebar/Sidebar';
+
 import './Dashboard.css';
 
 const salesData = [
@@ -66,12 +65,12 @@ const FollowUpCard = ({ name, phone, location, status, nextFollowUp, lastUpdate 
 const Dashboard = () => {
   return (
     <div className="dashboard-container">
-      <Sidebar />
+      {/* <Sidebar /> */}
       
       {/* Main Content */}
       <main className="main-content">
         <header className="main-header">
-          <div className="header-title">Dashboard</div>
+          <div className="title">Dashboard</div>
         </header>
         
         {/* Stats and Chart Grid */}
@@ -139,22 +138,24 @@ const Dashboard = () => {
               <option>All</option>
             </select>
           </div>
-          <FollowUpCard 
-            name="Dubizzle Call"
-            phone="971508999519"
-            location="Park Lane, Dubai Hills Estate"
-            status="No Answer"
-            nextFollowUp="Mar 23, 2023"
-            lastUpdate="Mar 23, 2023"
-          />
-          <FollowUpCard 
-            name="Dubizzle Call"
-            phone="971508999519"
-            location="Park Lane, Dubai Hills Estate"
-            status="Agent Enquiry"
-            nextFollowUp="Mar 23, 2023"
-            lastUpdate="Mar 23, 2023"
-          />
+          <div className="follow-up-cards-container">
+            <FollowUpCard 
+              name="Dubizzle Call"
+              phone="971508999519"
+              location="Park Lane, Dubai Hills Estate"
+              status="No Answer"
+              nextFollowUp="Mar 23, 2023"
+              lastUpdate="Mar 23, 2023"
+            />
+            <FollowUpCard 
+              name="Dubizzle Call"
+              phone="971508999519"
+              location="Park Lane, Dubai Hills Estate"
+              status="Agent Enquiry"
+              nextFollowUp="Mar 23, 2023"
+              lastUpdate="Mar 23, 2023"
+            />
+          </div>
         </div>
       </main>
     </div>

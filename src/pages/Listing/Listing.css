@@ -1,0 +1,266 @@
+.app-container {
+    display: flex;
+    height: 100vh;
+   
+  }
+
+  /* .sidebar {
+    width: 250px;
+    background-color: #e5e5e5;
+    padding: 20px;
+  }
+
+  .logo {
+    margin-bottom: 32px;
+  }
+
+  .logo h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-menu li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 4px;
+    color: #333;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+
+  .nav-menu li:hover {
+    background-color: #d1d1d1;
+  }
+
+  .nav-menu li.active {
+    background-color: #6366f1;
+    color: white;
+  } */
+
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .header {
+    margin-bottom: 24px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+
+  .filters-row {
+    margin-bottom: 24px;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: auto; /* This can help if the filters exceed the width */
+}
+
+.search-filters {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap; /* Allows wrapping to the next line */
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 120px; /* Adjusted to reduce the size */
+    max-width: 150px; /* Set a maximum width */
+    flex: 1; /* Allow filters to grow equally */
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+  
+  .filter-group label {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+  }
+  
+  .filter-group input,
+  .filter-group select {
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background: none;
+  }
+  
+  .filter-group input:focus,
+  .filter-group select:focus {
+    outline: none;
+    border-color: #6366f1;
+  }
+
+  .tabs-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 8px;
+  }
+
+  .tab-btn {
+    padding: 8px 16px;
+    border: none;
+    background: none;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+  }
+
+  .tab-btn.active {
+    color: #6366f1;
+    border-bottom-color: #6366f1;
+    transition: all 0.2s ease;
+  
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 8px;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+
+  .btn-primary {
+    background-color: #6366f1;
+    color: white;
+    border-color: #6366f1;
+  }
+
+  .btn-secondary {
+    background-color: white;
+    color: #666;
+    border-color: #e5e5e5;
+  }
+
+  .table-container {
+    background-color: #2525254d;
+
+  backdrop-filter: blur(50px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse:collapse;
+  }
+
+  th {
+    padding: 12px 24px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+    text-transform: uppercase;
+    background-color: #fafafa2b;
+    border-bottom: 1px solid #e5e5e5eb;
+  }
+
+  td {
+    padding: 16px 24px;
+    border-bottom: 1px solid #e5e5e516;
+    
+  }
+
+  .action-icons {
+    display: flex;
+    gap: 8px;
+  }
+
+  .icon-btn {
+    padding: 6px;
+    border: none;
+    background: none;
+    color: #6366f1;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+
+  .icon-btn:hover {
+    background-color: #f3f4ff;
+  }
+
+  .table-scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    position: relative;
+    border: 1px solid #e5e7eb5f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.588);
+  }
+  
+  table {
+    width: 100%;
+    min-width: max-content;
+    background:none;
+    color: white;
+    backdrop-filter: blur(50px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ensures table doesn't shrink below content width */
+    
+  }
+  
+  /* Fixed columns styling */
+  /* .sticky-col {
+    position: sticky;
+    left: 0;
+    background-color: white;
+    z-index: 2;
+  }
+   */
+  .sticky-actions {
+    position: sticky;
+    right: 0;
+    background-color: #f8f9fa;
+    z-index: 2;
+    box-shadow: -2px 0 5px -2px rgba(0, 0, 0, 0.312);
+  }
+  
+  
+  thead .sticky-col,
+  thead .sticky-actions {
+    background-color: #ddaee6;
+    z-index: 3;
+  }
+  
+/*   
+  .sticky-col {
+    box-shadow: 2px 0 5px -2px rgba(0,0,0,0.1);
+  } */
+  
+  
+  
