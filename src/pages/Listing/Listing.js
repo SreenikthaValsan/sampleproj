@@ -22,8 +22,8 @@ const Listing = () => {
     unitNo: ''
   });
 
-  // const API_BASE_URL = 'http://127.0.0.1:5050/getListings';
-  const API_BASE_URL = 'https://sampleproj-rho.vercel.app/getListings';
+  const API_BASE_URL = 'http://127.0.0.1:5050/getListings';
+  
 
   // Fetch listing data from the API
   useEffect(() => {

@@ -22,7 +22,7 @@ def after_request(response):
 # input_payload = json.loads(request.data)
 #     show_doc = input_payload.get("showDocuments", False)
 
-@app.route("/getCalendarData", methods=["POST"])
+@app.route("/getCalendarData", methods=["POST","OPTIONS"])
 def get_calendar_data():
     response = Application.get_calendar_data()
     return response
