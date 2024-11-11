@@ -1,9 +1,11 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, PieChart, Pie, Cell, Legend , Tooltip } from 'recharts';
 import { Home, ChevronDown } from 'lucide-react';
+import lead from '../../assets/lead.jpg'
 
 import './Dashboard.css';
 
+// Sample sales data
 const salesData = [
   { month: 'Jan', value: 0 },
   { month: 'Feb', value: 20 },
@@ -13,11 +15,26 @@ const salesData = [
   { month: 'June', value: 40 }
 ];
 
+// Sample pie chart data
+const pieChartData = [
+  { name: 'Target', value: 100 },
+  { name: 'Achieved', value: 70 },
+  { name: 'Remaining', value: 30 },
+  { name: 'Closed', value: 50 }
+];
+
+// Sample leaderboard data
+const leaderboardData = [
+  { id: 1, name: 'Christina B.', score: 80, rank: 1, image: {lead} },
+  { id: 2, name: 'Adnan G.', score: 74, rank: 2, image: {lead} },
+  { id: 3, name: 'Ahmed K.', score: 70, rank: 3, image: {lead} }
+];
+
 const StatCard = ({ icon: Icon, title, value, change, isPositive }) => (
   <div className="stat-card">
     <div className="stat-header">
       <div className="icon-container">
-        <Home className="home-icon" />
+        <Icon className="home-icon" />
       </div>
       <span className="stat-title">{title}</span>
     </div>
@@ -33,7 +50,7 @@ const FollowUpCard = ({ name, phone, location, status, nextFollowUp, lastUpdate 
     <div className="follow-up-header">
       <div className="follow-up-info">
         <div className="avatar">
-          <img src="/api/placeholder/48/48" alt="User" />
+          <img src="/api/placeholder/48/48" alt="User " />
         </div>
         <div className="follow-up-details">
           <h3>{name}</h3>
@@ -62,12 +79,131 @@ const FollowUpCard = ({ name, phone, location, status, nextFollowUp, lastUpdate 
   </div>
 );
 
+const Leaderboard = () => {
+  return (
+    <div className="leaderboard-container">
+      <div className="leaderboard-header">
+        <span className="trophy-icon">🌟</span>
+        <h2>Wall of Fame</h2>
+      </div>
+      <div className="leaderboard-content">
+        {leaderboardData.map((user) => {
+          const isFirst = user.rank === 1;
+          const avatarOrder = user.rank === 1 ? 2 : user.rank === 2 ? 1 : 3;
+          
+          return (
+            <div 
+              key={user.id} 
+              className={`leaderboard-item rank-${user.rank}`}
+              style={{ order: avatarOrder }}
+            >
+              <div className="avatar-container">
+                <img 
+                  src={lead}
+                  alt={user.name} 
+                  className="avatar-image"
+                />
+                <div className="rank-badge">{user.rank}</div>
+              </div>
+              <div className="user-info">
+                <span className="user-name">{user.name}</span>
+                <span className="user-score">{user.score}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      </div>
+  );
+};
+
+const DealsMetrics = () => {
+  const totalDeals = 100;
+  const achievedDeals = 70;
+  const remainingDeals = totalDeals - achievedDeals;
+  const closedDeals = 50;
+  
+  const closedDealsData = [
+    {
+      name: 'Deals',
+      'Closed Deals': closedDeals,
+      'In Progress': achievedDeals - closedDeals,
+      'Remaining': remainingDeals,
+    }
+  ];
+
+  return (
+    <div className="deals-card">
+      <div className="card-header">
+        <h2>Deals Progress</h2>
+      </div>
+      <div className="card-content">
+        <div className="metrics-container">
+          <div className="progress-section">
+            <div className="progress-header">
+              <span>Overall Progress ({achievedDeals}/{totalDeals})</span>
+              <span className="muted-text">{(achievedDeals/totalDeals * 100).toFixed(1)}%</span>
+            </div>
+            <div className="progress-bar">
+              <div 
+                className="progress-fill" 
+                style={{ width: `${(achievedDeals/totalDeals * 100)}%` }} 
+              />
+            </div>
+          </div>
+
+          <div className="metrics-grid">
+            <div className="metric-item">
+              <p className="metric-value">{totalDeals}</p>
+              <p className="metric-label">Target Deals</p>
+            </div>
+            <div className="metric-item">
+              <p className="metric-value success">{achievedDeals}</p>
+              <p className="metric-label">Achieved</p>
+            </div>
+            <div className="metric-item">
+              <p className="metric-value info">{closedDeals}</p>
+              <p className="metric-label">Closed</p>
+            </div>
+          </div>
+
+          <div className="chart-container">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={closedDealsData} layout="vertical">
+                <XAxis type="number" />
+                <YAxis type="category" dataKey="name" hide />
+                <Tooltip />
+                <Bar dataKey="Closed Deals" stackId="a" fill="#2563eb" />
+                <Bar dataKey="In Progress" stackId="a" fill="#84cc16" />
+                <Bar dataKey="Remaining" stackId="a" fill="#e5e7eb" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+
+          <div className="legend">
+            <div className="legend-item">
+              <div className="legend-dot closed" />
+              <span>Closed</span>
+            </div>
+            <div className="legend-item">
+              <div className="legend-dot in-progress" />
+              <span>In Progress</span>
+            </div>
+            <div className="legend-item">
+              <div className="legend-dot remaining" />
+              <span>Remaining</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
 const Dashboard = () => {
   return (
     <div className="dashboard-container">
-      {/* <Sidebar /> */}
-      
-      {/* Main Content */}
       <main className="main-content">
         <header className="main-header">
           <div className="title">Dashboard</div>
@@ -96,7 +232,7 @@ const Dashboard = () => {
               title="Properties for rent" 
               value="36" 
               change={3} 
-              isPositive={false} 
+              is Positive={false} 
             />
             <StatCard 
               icon={Home} 
@@ -127,6 +263,15 @@ const Dashboard = () => {
                 </BarChart>
               </ResponsiveContainer>
             </div>
+          </div>
+        </div>
+
+        
+
+        <div className="pie-leaderboard-container">
+          <DealsMetrics />
+          <div className="leaderboard-section">
+            <Leaderboard />
           </div>
         </div>
 

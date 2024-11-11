@@ -10,10 +10,10 @@ const navItems = [
   { icon: '👥', label: 'Leads', path: '/leads' },
   { icon: '📞', label: 'Contacts & Owners', path: '/contacts' },
   { icon: '📊', label: 'Reports', path: '/reports' },
-  { icon: '📧', label: 'Email Template', path: '/email-template' },
+  { icon: '📧', label: 'Communication Template', path: '/communication-template' },
   { icon: '📄', label: 'Form Generator', path: '/form-generator' },
   { icon: '🏆', label: 'Leader Board', path: '/leader-board' },
-  { icon: '🌟', label: 'Wall of Fame', path: '/wall-of-fame' }
+  // { icon: '🌟', label: 'Wall of Fame', path: '/wall-of-fame' }
 ];
 
 const Sidebar = () => {

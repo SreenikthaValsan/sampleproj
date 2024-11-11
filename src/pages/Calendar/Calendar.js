@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, Moon } from 'lucide-react';
 import './Calendar.css';
 
 const Calendar = () => {
+  const [activeTab, setActiveTab] = useState('Month');
     const [currentDate, setCurrentDate] = useState(new Date());
     const [events, setEvents] = useState([]); // State to store events
     const days = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
@@ -107,11 +108,17 @@ const Calendar = () => {
               <h1>Calendar</h1>
             </div>
             
-            <div className="view-options">
-              <span className="view-option">Day</span>
-              <span className="view-option">Week</span>
-              <span className="view-option active">Month</span>
-            </div>
+            <div className="tabs">
+            {['Day', 'Week', 'Month'].map((tab) => (
+              <button
+                key={tab}
+                className={`tab-btn ${activeTab === tab ? 'active' : ''}`}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab} 
+              </button>
+            ))}
+          </div>
   
             <div className="month-nav">
               <div className="month-title">
